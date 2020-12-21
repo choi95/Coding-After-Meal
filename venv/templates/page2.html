@@ -6,8 +6,8 @@
         <!--font-->
         <link rel="preconnect" href="https://fonts.gstatic.com"> 
         <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Do+Hyeon&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="css/page2.css">
-        <link rel="stylesheet" href="css/nav.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/page2.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
     </head>
     <body>
 
@@ -16,7 +16,7 @@
         <!--image margin 갱신필요-->
         <div id ="plane-wrapper" style = "margin-left: 15.45%">
             <div class="txt">2</div>
-                <img src="img/icon_nav 복사본.png" width="50px" height ="50px">
+                <img src="{{ url_for('static', filename='img/icon_nav.png') }}" width="50px" height ="50px">
         </div>  
     </div>
     <div class="bar">
