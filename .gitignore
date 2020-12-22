@@ -6,4 +6,6 @@ __pycache__
 lib
 .vscode
 settings.json
+/pyvenv.cfg
+/.idea
 pyvenv.cfg
