@@ -1,1 +1,4 @@
 db.yaml
+scripts
+lib
+__pycache__
