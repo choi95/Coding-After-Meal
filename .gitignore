@@ -9,3 +9,5 @@ settings.json
 /pyvenv.cfg
 /.idea
 pyvenv.cfg
+.virtualenv
+.venv

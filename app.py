@@ -82,9 +82,9 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/main/')
-def main():
-    return render_template('main.html')
+@app.route('/select/')
+def select():
+    return render_template('select.html')
 
 
 if __name__ == "__main__":
