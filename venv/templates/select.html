@@ -43,14 +43,14 @@
 
                 <!--answer-list-->
                 <div class="answer-list">
-                    <div class="answer" value=>
-                        <span>아침</span>
+                    <div class="answer" value="1">
+                        아침
                     </div>
-                    <div class="answer" value=>
-                        <span>점심</span>
+                    <div class="answer" value="2">
+                        점심
                     </div>
-                    <div class="answer" value=>
-                        <span>저녁</span>
+                    <div class="answer" value="3">
+                        저녁
                     </div>
                 </div>
                 
@@ -58,7 +58,7 @@
             
             <!--page-info-->
             <div class="page-info">
-                <span>1/6</span>
+                1/6
             </div>
 
         </div>
@@ -80,14 +80,14 @@
         
                 <!--answer-list-->
                 <div class="answer-list">
-                    <div class="answer" value=>
-                        <span>스트레스 만땅</span>
+                    <div class="answer" value="1">
+                        스트레스 만땅
                     </div>
-                    <div class="answer" value=>
-                        <span>오늘은 그냥 그래요</span>
+                    <div class="answer" value="2">
+                        오늘은 그냥 그래요
                     </div>
-                    <div class="answer" value=>
-                        <span>아니요 오늘 기분 좋아요</span>
+                    <div class="answer" value="3">
+                        아니요 오늘 기분 좋아요
                     </div>
                 </div>
         
@@ -95,7 +95,7 @@
         
             <!--page-info-->
             <div class="page-info">
-                <span>2/6</span>
+                2/6
             </div>
         
         </div>
@@ -116,14 +116,14 @@
         
                 <!--answer-list-->
                 <div class="answer-list">
-                    <div class="answer" value=>
-                        <span>네 지금 다이어트 중이에요</span>
+                    <div class="answer" value="1">
+                        네 지금 다이어트 중이에요
                     </div>
-                    <div class="answer" value=>
-                        <span>아니요 아무거나 잘 먹어요</span>
+                    <div class="answer" value="2">
+                        아니요 아무거나 잘 먹어요
                     </div>
-                    <div class="answer" value=>
-                        <span>아니요 오늘 맛있는 게 먹고 싶어요</span>
+                    <div class="answer" value="3">
+                        아니요 오늘 맛있는 게 먹고 싶어요
                     </div>
                 </div>
         
@@ -131,7 +131,7 @@
         
             <!--page-info-->
             <div class="page-info">
-                <span>3/6</span>
+                3/6
             </div>
         
         </div>
@@ -152,14 +152,14 @@
         
                 <!--answer-list-->
                 <div class="answer-list">
-                    <div class="answer" value=>
-                        <span>아주 맑아요!</span>
+                    <div class="answer" value="1">
+                        아주 맑아요!
                     </div>
-                    <div class="answer" value=>
-                        <span>조금 흐려요</span>
+                    <div class="answer" value="2">
+                        조금 흐려요
                     </div>
-                    <div class="answer" value=>
-                        <span>비 / 눈 이와요</span>
+                    <div class="answer" value="3">
+                        비 / 눈 이와요
                     </div>
                 </div>
         
@@ -167,7 +167,7 @@
         
             <!--page-info-->
             <div class="page-info">
-                <span>4/6</span>
+                4/6
             </div>
         
         </div>
@@ -188,14 +188,14 @@
         
                 <!--answer-list-->
                 <div class="answer-list">
-                    <div class="answer" value=>
-                        <span>2000 ~ 3000</span>
+                    <div class="answer" value="1">
+                        2000 ~ 3000
                     </div>
-                    <div class="answer" value=>
-                        <span>3000 ~ 4000</span>
+                    <div class="answer" value="2">
+                        3000 ~ 4000
                     </div>
-                    <div class="answer" value=>
-                        <span>4000 ~ 5000</span>
+                    <div class="answer" value="3">
+                        4000 ~ 5000
                     </div>
                 </div>
         
@@ -203,7 +203,7 @@
         
             <!--page-info-->
             <div class="page-info">
-                <span>5/6</span>
+                5/6
             </div>
         
         </div>
@@ -217,24 +217,24 @@
                 <!--question-box-->
                 <div class="question-box">
                     <div class="inner-contents">
-                        <div class="q">Q2</div>
+                        <div class="q">Q6</div>
                         <h1>이 중에서 어제 먹은 게 있나요?</h1>
                     </div>
                 </div>
         
                 <!--answer-list-->
                 <div class="answer-list">
-                    <div class="answer" value=>
-                        <span>{}</span>
+                    <div class="answer" value="1">
+                        {}
                     </div>
-                    <div class="answer" value=>
-                        <span>{}</span>
+                    <div class="answer" value="2">
+                        {}
                     </div>
-                    <div class="answer" value=>
-                        <span>{}</span>
+                    <div class="answer" value="3">
+                        {}
                     </div>
-                    <div class="answer" value=>
-                        <span>없어요</span>
+                    <div class="answer" value="4">
+                        없어요
                     </div>
                 </div>
         
@@ -242,7 +242,7 @@
         
             <!--page-info-->
             <div class="page-info">
-                <span>6/6</span>
+                6/6
             </div>
         
         </div>
@@ -260,12 +260,6 @@
             });
             $('#wrap1').show();
         });
-    
-        ()=>{
-            var answer = $('.answer').click()
-            console.log($('.answer'));
-        }
-
 
        function  next(){
             var name = '#wrap'+num;   
@@ -275,5 +269,25 @@
             name = '#wrap' + num;
             $(name).show();
        }
+
+    //    const answer = document.querySelectorAll('.answer');
+    //    answer.forEach(element => {
+    //        element.addEventListener('click',(elem)=>{
+               
+
+    //         });
+    //     })
+
+        $('.answer').click(function () {
+            var val = $(this).attr("value");
+            console.log(val);
+            select_state[num-1] = val;
+
+            next();
+            if(num == 7){
+                alert(select_state);
+            }
+        });
+        
     </script>
 </html>
