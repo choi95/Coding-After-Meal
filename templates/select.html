@@ -270,16 +270,16 @@
             $(name).show();
        }
 
-
         $('.answer').click(function () {
             console.log($(this));
             var val = $(this).attr("value");
-            console.log(val);
             select_state[num-1] = val;
 
             next();
             if(num == 7){
-                window.location.href = 'http://localhost:5000/page1/';
+                var str = 'http://localhost:5000/page1?';
+                str = str+'a='+select_state[0]+'&b='+select_state[1]+'&c='+select_state[2]+'&d='+select_state[3]+'&e='+select_state[4]+'&f='+select_state[5];
+                window.location.href = str;
             }
         });
         

@@ -68,14 +68,14 @@ def home():
 
 @app.route('/page1/', methods=['GET'])
 def page1():
-    result = ["떡볶이","햄버거","비빔밥"]
+    a = request.args.get('a')
+    result = ["떡볶이","햄버거",a]
     return render_template('page1.html',menu = result)
 
 
 @app.route('/page2/')
 def page2():
     return render_template('page2.html')
-
 
 @app.route('/index/')
 def index():
