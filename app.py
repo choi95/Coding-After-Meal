@@ -70,6 +70,72 @@ def home():
 def page1():
     a = request.args.get('a')
     result = ["떡볶이","햄버거",a]
+    import pandas as pd
+    try:
+        cur = mysql.connection.cursor()
+        cur.execute("select * from food_information")
+        info = cur.fetchall()
+    except Exception as e:
+        print('cur error:', e)
+    result = pd.DataFrame(info)
+    print(result)
+    value = []
+    value.append(int(request.args.get('a')))
+    value.append(int(request.args.get('b')))
+    value.append(int(request.args.get('c')))
+    value.append(int(request.args.get('d')))
+    value.append(int(request.args.get('e')))
+    value.append(int(request.args.get('f')))
+    print(value)
+    # stress
+    for i in range(62):
+        if result.loc[i, 11] != value[1]:
+            result = result.drop(i)
+    result=result.reset_index(drop=True)
+
+    # 다이어트
+    size = len(result)
+    height = 160
+    for i in range(size):
+        recommended_calories = (height - 100) * 0.9 * 30
+        if value[2] == 1:
+            cal = recommended_calories * (2 / 5) - 200
+
+        if value[2] == 2:
+            cal = recommended_calories * (2 / 5)
+
+        if value[2] == 3:
+            cal = recommended_calories * (2 / 5) + 200
+
+    for i in range(size):
+        if result.loc[i, 5] > cal:
+            result = result.drop(index=i)
+    result = result.reset_index(drop=True)
+
+    # 오늘 날씨 어때요?
+    size = len(result)
+    for i in range(size):
+        if value[3] == 3 and result.loc[i, 4] < 2:
+            result = result.drop(index=i)
+    result = result.reset_index(drop=True)
+
+    # 가격대
+    size = len(result)
+    for i in range(size):
+        if value[4] == 1:
+            if result.loc[i, 2] < 2000 and result.loc[i, 2] > 3000:
+                result = result.drop(index=i)
+        if value[4] == 2:
+            if result.loc[i, 2] < 3000 and result.loc[i, 2] > 4000:
+                result = result.drop(index=i)
+        if value[4] == 3:
+            if result.loc[i, 2] < 4000 and result.loc[i, 2] > 5000:
+                result = result.drop(index=i)
+    result = result.reset_index(drop=True)
+    print(result)
+
+    result = [result[1][0],result[1][1],result[1][2]]
+
     return render_template('page1.html',menu = result)
 
 
