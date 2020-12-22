@@ -270,15 +270,9 @@
             $(name).show();
        }
 
-    //    const answer = document.querySelectorAll('.answer');
-    //    answer.forEach(element => {
-    //        element.addEventListener('click',(elem)=>{
-               
-
-    //         });
-    //     })
 
         $('.answer').click(function () {
+            console.log($(this));
             var val = $(this).attr("value");
             console.log(val);
             select_state[num-1] = val;
