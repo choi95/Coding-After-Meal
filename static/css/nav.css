@@ -9,9 +9,9 @@ body{
     font-size:large;
 }
 #progress {
-    background-color: #009bfb;
+    background-color: #779c74;
     border-radius: 8px;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
     width: 8.3%;
     height: 8px;
     transition: .5s ease-in;

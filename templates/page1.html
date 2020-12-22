@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Do+Hyeon&display=swap" rel="stylesheet">
         <!--css-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href= "{{ url_for('static',filename='css/nav.css') }}">
 		<style>
 			p { 
             margin:20px 0px;
@@ -25,29 +26,17 @@
 <body>
 
  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">코딩도 식후경</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">식단추천
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">뭐라고하지</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">안녕</a>
-          </li>
-        </ul>
-      </div>
+<div id ="plane-position">
+        <!--image margin 갱신필요-->
+        <div id ="plane-wrapper" style = "margin-left: 80%">
+            <div class="txt">Have a good meal time</div>
+                <img src="{{ url_for('static', filename='img/icon_nav.png') }}" width="50px" height ="50px">
+        </div>  
     </div>
-  </nav>
+    <div class="bar">
+        <!--progress 갱신 필요-->
+        <div id="progress" class="filled-bar" style="width:99%;"></div>
+    </div>
 
 <!--page content-->
 <div class="container">    
@@ -59,7 +48,7 @@
       <!-- /.col-lg-8 -->
       <div class="col-lg-5">
         <h1 class="font-weight-light">코딩도 식후경이지</h1>
-        <p>여러분 오늘 밥은 잘 챙겨먹고 있나요? 또 편의점에서 라면으로 때운건 아니죠? 메뉴 하나 고르는데 수십번 고민하다 결국 편의점으로 가는 우리, 저희가 그 고민을 대신 해드릴게요.</p>
+        <p>오늘 하루도 밥 맛있게 드시고 열심히 과제하고 열심히 놀아요!</p>
       </div>
       <!-- /.col-md-4 -->
     </div>
@@ -68,113 +57,37 @@
     <!-- Call to Action Well -->
     <div class="card text-white bg-secondary my-5 py-4 text-center">
       <div class="card-body">
-        <p class="text-white m-0"> 원하는 금액과 식사 종류, 거기다 식단 스타일까지 골라주시면 균형잡힌 영양소로 구성되어 있는 적정한 가격대의 음식을 추천해들릴게요. 지금 바로 이용해보세요.</p>
+        <p class="text-white m-0">음식에 대한 사랑만큼 진실한 사랑은 없다.</p>
+        <p class="text-white m-0">There is no sincerer love than the love of food.</p>
+        <p class="text-white m-0">조지 버나드 쇼 George Bernard Shaw</p>
       </div>
     </div>
 
     <div class="row">
-         <!--원하는 가격대 선택-->
+         <!--메뉴1-->
         <div class="col-md-4 mb-5">
             <div class="col-md-12">
                 <div class="question">
-                    <h1>&#x25B6;원하는 가격대를 골라주세요&#x1F4B5;</h1>
+                    <h1>&#x25B6;오늘의 메뉴는 너다 {{menu[0]}}&#x1F374;</h1>
                 </div>
-                
-                <form>
-                    <div class="radio">
-                        <label for="rb1">
-                            <input type="radio" id="rb1" name="price" value="1">
-                        1000~2500원
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="rb2">
-                            <input type="radio" id="rb2" name="price" value="2">
-                        2500~4000원
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="rb3">
-                            <input type="radio" id="rb3" name="price" value="3">
-                        4000원~
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <input type="button" class="btn" value="Click">
-                    </div>
-                </form>
             </div>
         </div>
-        <!--체중관리 선택지-->
+        <!--메뉴2-->
 
         <div class="col-md-4 mb-5">
             <div class="col-md-12">
                 <div class="question">
-                    <h1>&#x25B6;현재 체중 관리중이신가요?&#x1F603;</h1>
+                    <h1>&#x25B6;아니면 너다 {{menu[1]}}&#x1F371;</h1>
                 </div>
-                
-                <form>
-                    <div class="radio">
-                        <label for="rb1">
-                            <input type="radio" id="rb1" name="weight" value="1">
-                        체중감량
-                        </label>
-                    </div> 
-                    <div class="radio">
-                        <label for="rb2">
-                            <input type="radio" id="rb2" name="weight" value = "2">
-                        체중증가
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="rb3">
-                            <input type="radio" id="rb3" name="weight" value="3">
-                        체중유지
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <input type="button" class="btn" value="Click">
-                    </div>
-                </form>
             </div>
         </div>
 
-        <!--식사 종류-->
+        <!--메뉴3-->
         <div class="col-md-4 mb-5">
             <div class="col-md-12">
                 <div class="question">
-                    <h1>&#x25B6;원하는 식사 종류를 골라주세요&#x1F372;</h1>
+                    <h1>&#x25B6;아니면 너다 {{menu[2]}}&#x1F372;</h1>
                 </div>
-                
-                <form>
-                    <div class="radio">
-                        <label for="rb1">
-                            <input type="radio" id="rb1" name="food" value="1">
-                        한식
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="rb2">
-                            <input type="radio" id="rb2" name="food" value="2">
-                        양식
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="rb3">
-                            <input type="radio" id="rb3" name="food" value="3">
-                        중식
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="rb4">
-                            <input type="radio" id="rb4" name="food" value="4">
-                        일식
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <input type="button" class="btn" value="Click">
-                    </div>
-                </form>
             </div>
         </div>
     </div>

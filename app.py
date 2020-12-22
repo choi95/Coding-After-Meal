@@ -14,9 +14,10 @@ def home():
     return render_template('home.html', title="hello jinja")
 
 
-@app.route('/page1/')
+@app.route('/page1/', methods=['GET'])
 def page1():
-    return render_template('page1.html')
+    result = ["떡볶이","햄버거","비빔밥"]
+    return render_template('page1.html',menu = result)
 
 
 @app.route('/page2/')
