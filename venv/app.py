@@ -14,24 +14,14 @@ def home():
     return render_template('home.html', title="hello jinja")
 
 
-@app.route('/page1/')
-def page1():
-    return render_template('page1.html')
+@app.route('/select/')
+def select():
+    return render_template('select.html')
 
 
-@app.route('/page2/')
-def page2():
-    return render_template('page2.html')
-
-
-@app.route('/index/')
-def index():
-    return render_template('index.html')
-
-
-@app.route('/main/')
-def main():
-    return render_template('main.html')
+@app.route('/result/')
+def result():
+    return render_template('result.html')
 
 
 if __name__ == "__main__":
