@@ -1,0 +1,4 @@
+mysql_host: hackerton.cwzqay46qak1.ap-northeast-2.rds.amazonaws.com
+mysql_user: 'hackerton'
+mysql_password: 'hackerton'
+mysql_db: 'aftermeal'

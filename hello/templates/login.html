@@ -1,0 +1,315 @@
+<!doctype HTML>
+<head>
+	<meta charset="UTF-8">
+	<title>코딩도 식후경~</title>
+	<!-- <link rel="stylesheet" href="static/css/login.css"> -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+	<script src="https://kit.fontawesome.com/51db22a717.js" crossorigin="anonymous"></script>
+	<!--font-->
+        <link rel="preconnect" href="https://fonts.gstatic.com"> 
+		<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Do+Hyeon&display=swap" rel="stylesheet">
+	<style>
+	:root{
+	--body-background-color: #f5f6f7;
+	--font-color: #252525;
+	--border-gray-color : #dadada;
+	--naver-green-color: #779c74;
+	--naver-green-border-color: #779c74;
+	}
+	*{
+		margin:0;
+		padding:0;
+		font-family: 'Do Hyeon', sans-serif;
+		word-break: keep-all;
+
+	}
+
+	body{
+		background:var(--body-background-color);
+		font-family: 'Do Hyeon', sans-serif;
+	}
+	h1,h2{
+		font-family: 'Do Hyeon', sans-serif;
+	}
+
+	.main-container{
+		width:100%;
+		display:flex;
+		flex-direction:column;
+		align-items:center;
+		margin-top: 21px;
+	}
+	.main-container .main-wrap{
+		width:768px;
+
+	}
+	.main-container .main-wrap .sel-lang-wrap .lang-select
+	{
+		width: 96px;
+		height: 30px;
+		color: var(--font-color);
+		border: solid 1px var(--border-gray-color);
+	}
+	.main-container .main-wrap .logo-wrap{
+		padding-top:55px;
+	}
+	.main-container .main-wrap .logo-wrap img
+	{
+		width: 231px;
+		height: 44px;
+	}
+
+	.main-container .main-wrap header .sel-lang-wrap{
+		display:flex;
+		justify-content:flex-end;
+	}
+
+	.main-container .main-wrap header .logo-wrap{
+		display:flex;	
+		flex-direction: column;
+		align-items: center;
+	}
+	.login-input-section-wrap{
+		padding-top: 60px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.login-input-wrap{
+		width: 465px;
+		height :48px;
+		border: solid 1px var(	--border-gray-color );
+		background: white;
+	}
+	.password-wrap{
+		margin-top: 13px;
+	}
+	.login-input-wrap input{
+		border: none;
+		width:430px;
+		margin-top: 10px;
+		font-size: 14px;
+		margin-left: 10px;
+		height:30px;
+	}
+	.login-button-wrap {
+		padding-top: 13px;
+	}
+	.login-button-wrap button{
+		width: 465px;
+		height :48px;
+		font-size: 18px;
+		color: black;
+		border: solid 1px black;
+	}
+	.login-stay-sign-in{
+		width: 465px;
+		height: 52px;
+		
+		display: flex;
+		font-size: 15px;
+		color: #4e4e4e;
+		align-items: center;
+		justify-content: flex-start;
+		border-bottom: solid 1px var(--border-gray-color);
+	}
+	.login-stay-sign-in i{
+		font-size: 25px;
+		color: #9ba1a3;
+	}
+	.login-stay-sign-in span{
+		padding-left: 5px;
+		line-height: 25px;
+	}
+
+	.Easy-sgin-in-wrap{
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-top: 40px;
+
+	}
+	.Easy-sgin-in-wrap h2{
+		font-size: 20px;
+	}
+	.Easy-sgin-in-wrap .sign-button-list
+	{
+		padding-top:25px;
+		list-style: none;
+		width: 465px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.Easy-sgin-in-wrap .sign-button-list li{
+		padding-bottom: 10px;
+	}
+	.Easy-sgin-in-wrap .sign-button-list li button{
+		width: 465px;
+		height: 56px;
+		border: solid 1px var(--border-gray-color);
+		text-align: left;
+		background: white;
+	}
+	.Easy-sgin-in-wrap .sign-button-list li button i{
+		padding-left: 15px;
+		font-size: 20px;
+	}
+	.Easy-sgin-in-wrap .sign-button-list li button span{
+		padding-left: 20px;
+		font-size: 18px;
+	}
+	.Easy-sgin-in-wrap .forget-msg{
+		color:var(--font-color);
+		font-size: 14px;
+		padding-top: 10px;
+
+	}
+	footer{
+	
+		padding-top: 95px;
+		padding-bottom: 15px;
+
+		display:flex;
+		flex-direction:column;
+		align-items:center;
+		width:768px;
+
+
+
+	}
+	.copyright-wrap{
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		height: 15px;
+
+
+	}
+	footer .copyright-wrap span img{
+		width: 59px;
+		
+		height: 11px;
+	}
+	footer .copyright-wrap span{
+		font-size: 13px;
+		line-height: 15px;
+	}
+
+	/* The container */
+	.container {
+		display: block;
+		position: relative;
+		padding-left: 35px;
+		margin-bottom: 12px;
+		cursor: pointer;
+		font-size: 22px;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+	
+	/* Hide the browser's default radio button */
+	.container input {
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+	}
+	
+	/* Create a custom radio button */
+	.checkmark {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 25px;
+		width: 25px;
+		background-color: #eee;
+		border-radius: 50%;
+	}
+	
+	/* On mouse-over, add a grey background color */
+	.container:hover input ~ .checkmark {
+		background-color: #ccc;
+	}
+	
+	/* When the radio button is checked, add a blue background */
+	.container input:checked ~ .checkmark {
+		background-color: #2196F3;
+	}
+	
+	/* Create the indicator (the dot/circle - hidden when not checked) */
+	.checkmark:after {
+		content: "";
+		position: absolute;
+		display: none;
+	}
+	
+	/* Show the indicator (dot/circle) when checked */
+	.container input:checked ~ .checkmark:after {
+		display: block;
+	}
+	
+	/* Style the indicator (dot/circle) */
+	.container .checkmark:after {
+		top: 9px;
+		left: 9px;
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		background: white;
+	}
+	</style>
+</head>
+<body>
+	<div class="main-container">
+		<div class="main-wrap">
+		<header>
+			<div class="logo-wrap">
+				<h1>여러분의 메뉴 고민을 "코딩도 식후경"이 해줄게요&#x1F609;</h1>
+				<h2>정보를 등록해주세요 ! &#x2714;</h2>
+			</div>
+		</header>
+		<form  method="POST" class="comingsoon-contact" name="contact-form" id="contactForm" action="">
+			<section class="login-input-section-wrap">
+				<div class="login-input-wrap">
+					<input placeholder="Username" type="text" name="Username"></input>
+				</div>
+	
+				<div class="login-input-wrap password-wrap">	
+					<input placeholder="Age" type="number" name = "Age"></input>
+				</div>
+	
+				<div class="login-input-wrap password-wrap">	
+					<input placeholder="Gender" type="text" name = "Gender"></input>
+				</div>
+	
+				<div class="login-input-wrap password-wrap">	
+					<input placeholder="Height" type="number" name = "Height"></input>
+				</div>
+	
+				<div class="login-input-wrap password-wrap">	
+					<input placeholder="Weight" type="number" name = "Weight"></input>
+				</div>
+				<div class="login-button-wrap">
+					<button>Sign in</button>
+				</div>
+	
+			</section>
+		</form>
+		
+		</div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+</body>
