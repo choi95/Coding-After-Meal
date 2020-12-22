@@ -1,4 +1,6 @@
-db.yaml
+# created by virtualenv automatically
+
 scripts
-lib
+db.yarm
 __pycache__
+lib
