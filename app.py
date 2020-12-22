@@ -38,7 +38,7 @@ def method():
         cur.execute("INSERT INTO users(Username, Age, Gender, Height, Weight) VALUES(%s, %s, %s, %s, %s)",(Username, Age, Gender, Height, Weight))
         mysql.connection.commit()
         cur.close()
-        return redirect("/page2/")
+        return redirect("/select/")
 
     else:
         print("GET")
