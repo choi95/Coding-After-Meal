@@ -4,3 +4,4 @@ scripts
 db.yarm
 __pycache__
 lib
+.vscode
